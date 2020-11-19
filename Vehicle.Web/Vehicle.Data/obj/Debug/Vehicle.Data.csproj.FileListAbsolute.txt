@@ -1,0 +1,17 @@
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\Vehicle.Data.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\Vehicle.Data.pdb
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\obj\Debug\Vehicle.Data.csprojResolveAssemblyReference.cache
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\obj\Debug\Vehicle.Data.csproj.CoreCompileInputs.cache
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\obj\Debug\Vehicle.Data.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\obj\Debug\Vehicle.Data.pdb
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\Vehicle.Data.dll.config
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\EntityFramework.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\Unity.Abstractions.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\Unity.Container.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\EntityFramework.xml
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\Unity.Abstractions.pdb
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Data\bin\Debug\Unity.Container.pdb

@@ -1,0 +1,90 @@
+﻿@model Vehicle.Web.Areas.Admin.Models.CustomerViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/kendo.common.min.css" rel="stylesheet" />
+<link href="~/Content/kendo.default-v2.min.css" rel="stylesheet" />
+<h2>Customer List</h2>
+
+<div class=" col-md-12" style="text-align: right;margin-bottom: 10px">
+    <a class="btn btn-dark" style="margin-left: 10px;" href="#">Add</a>
+    <button type="button" class="btn btn-dark" style="margin-left: 10px;">Delete</button>
+</div>
+<div>
+    <div id="gridCustomer"></div>
+</div>
+
+
+@section scripts{
+<script src="~/Scripts/kendo.all.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: function (options) {
+                        var Page = $('#gridCustomer').data("kendoGrid").dataSource.page();
+                        var PageSize = $('#gridCustomer').data("kendoGrid").dataSource.pageSize();
+
+                        $.ajax({
+                            datatype: 'json',
+                            type: 'GET',
+                            url: '/Admin/Customer/GetAllList?Page=' + Page + '&PageSize=' + PageSize,
+                            success: function (resp) {
+                                options.success(resp);  
+                            }
+                        });
+                    }
+                },
+                schema: {
+                    data: function (result) {
+                        return result.data;                       
+                    },
+                    total: function (result) {                       
+                        return result.totalRecord;
+                    },
+                    model: {}
+                },
+                pageSize: 20,
+                serverPaging: true
+            });
+
+            $('#gridCustomer').kendoGrid({
+                autoBind: false,
+                dataSource: dataSource,
+                height: 400,
+                resizable: true,
+                filterable: false,
+                sortable: true,
+                pageable: {
+                    refresh: true,
+                    pageSizes: [20, 50, 100, 200]
+                },
+                columns: [
+                    { selectable: true, width: "50px" },
+                    {
+                        title: "Action", field: "Id", width: 70,
+                        template: '<a title="Click here to edit" style="cursor:pointer;" class="k-icon k-i-pencil btnShowpopup" href="/Admin/Customer/Index?id=#:Id#"></a>'
+                    },
+                    { title: 'Code', field: 'Code' },
+                    { title: 'Name', field: 'Name' },
+                    { title: 'Phone', field: 'Phone' },
+                    { title: 'Email', field: 'Email' },
+                    { title: 'Address', field: 'Address' },
+                    {
+                        title: 'Birthday',
+                        field: 'Birthday',
+                        template: "#= (Birthday == null)? '' : kendo.toString(kendo.parseDate(Birthday, 'yyyy-MM-dd'), 'dd/MM/yy') #"
+                        //định dạng lại date
+                    },
+                    { title: 'Sex', field: 'Sex' },
+                ]
+            }).data("kendoGrid");
+
+            dataSource.read();
+
+            
+        });
+    </script>    
+}

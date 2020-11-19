@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/kendo.common.min.css" rel="stylesheet" />
+<link href="~/Content/kendo.default-v2.min.css" rel="stylesheet" />
+
+<h2>Category List</h2>
+  
+<div class="row">
+    <div class="col-md-12" style="float:right;text-align: right;margin-bottom: 10px">
+        <a class="btn btn-dark btnShowpopup" style="margin-left: 10px;" href="#">Add</a>
+        <button type="button" class="btn btn-dark" style="margin-left: 10px;">Delete</button>
+    </div>   
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="gridCategory"></div>
+    </div>
+</div>
+
+@{Html.RenderAction("_FormPartitalCategory");}
+
+
+@section scripts{    
+    
+<script src="~/Scripts/kendo.all.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: function (options) {
+                        var Page = $('#gridCategory').data("kendoGrid").dataSource.page();
+                        var PageSize = $('#gridCategory').data("kendoGrid").dataSource.pageSize();
+
+                        $.ajax({
+                            datatype: 'json',
+                            type: 'GET',
+                            url: '/Admin/Category/GetAllList?Page=' + Page + '&PageSize=' + PageSize,
+                            success: function (resp) {
+                                options.success(resp);
+                            }
+                        });                       
+                    }
+                },
+                schema: {
+                    data: function (result) {
+                        return result.data;
+                    },
+                    total: function (result) {
+                        return result.totalRecord;
+                    },
+                    model: {}
+                },
+                pageSize: 20,
+                serverPaging: true
+            });
+
+            $('#gridCategory').kendoGrid({
+                autoBind: false,
+                dataSource: dataSource,
+                height: 400,
+                resizable: true,
+                filterable: false,
+                sortable: true,
+                pageable: {
+                    refresh: true,
+                    pageSizes: [20, 50, 100, 200]
+                },
+                columns: [
+                    { selectable: true, width: "50px" },
+                    {
+                        title: "Action", field: "Id", width: 70,
+                        template: '<a title="Click here to edit" style="cursor:pointer;" class="k-icon k-i-pencil btnShowpopup" href="\\#"></a>'
+                    },
+                    { title: 'Name', field: 'Name' }
+                ]
+            }).data("kendoGrid");
+
+            dataSource.read();
+
+            $(document).on('click', '.btnShowpopup', function () {
+                $('#modalCategory').modal('show');
+            });
+        });
+
+    </script> 
+}
+

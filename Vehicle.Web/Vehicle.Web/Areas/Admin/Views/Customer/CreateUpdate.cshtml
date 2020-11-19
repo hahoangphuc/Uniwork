@@ -1,0 +1,55 @@
+﻿@model Vehicle.Web.Areas.Admin.Models.CustomerViewModel
+@using Vehicle.Web.Models
+@{
+    ViewBag.Title = "CreateUpdate";
+}
+
+<h2>Customer Update</h2>
+@using (Html.BeginForm("CreateUpdate", "Customer", FormMethod.Post))
+{
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Code</label>
+            @Html.TextBoxFor(x => x.Code, new { @class= "form-control", @placeholder ="Code"})
+        </div>
+    </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="inputEmail4">Name</label>
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Name" })
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputPassword4">Phone</label>
+                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", @placeholder = "Phone" })
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Email</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email" })
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Address</label>
+                @Html.TextBoxFor(x => x.Address, new { @class = "form-control", @placeholder = "Address" })
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="inputEmail4">Birthday</label>
+                @Html.TextBoxFor(x => x.Birthday, new { @class = "form-control", @placeholder = "Birthday",@type ="date" })
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputPassword4">Sex</label>
+                @*@Html.TextBoxFor(x => x.Sex, new { @class = "form-control", @placeholder = "Sex" })*@
+                @Html.DropDownListFor(x => x.Sex,SelectListModel.lsGener(),new { @class = "form-control"})
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+}
+
+    
+
+
+

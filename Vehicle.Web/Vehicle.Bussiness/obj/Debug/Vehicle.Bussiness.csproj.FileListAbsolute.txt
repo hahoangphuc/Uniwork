@@ -1,0 +1,14 @@
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\Vehicle.Bussiness.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\Vehicle.Bussiness.pdb
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\obj\Debug\Vehicle.Bussiness.csprojResolveAssemblyReference.cache
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\obj\Debug\Vehicle.Bussiness.csproj.CoreCompileInputs.cache
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\obj\Debug\Vehicle.Bussiness.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\obj\Debug\Vehicle.Bussiness.pdb
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\Vehicle.Bussiness.dll.config
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\EntityFramework.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\EntityFramework.SqlServer.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\Vehicle.Data.dll
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\Vehicle.Data.pdb
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\Vehicle.Data.dll.config
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\EntityFramework.xml
+D:\JinPhuc\Web\Vehicle.Web\Vehicle.Bussiness\bin\Debug\EntityFramework.SqlServer.xml
