@@ -37,5 +37,14 @@ namespace Vehicle.Api.Controllers
             var res = _unitOfWork.CategoryReposistory.CreateUpdate(mdCate);
             return Ok(res);
         }
+
+        [Route("delete")]
+        [HttpDelete]
+        public IHttpActionResult Delete(string lsItem)
+        {
+            var lsDelete = lsItem.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            var res = _unitOfWork.CategoryReposistory.Delete(lsDelete);
+            return Ok(res);
+        }
     }
 }
